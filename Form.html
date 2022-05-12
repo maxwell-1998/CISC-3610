@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    
+
+    <style>
+       button {
+    background-color: black;
+    color: white;
+    width: 80px;
+    
+}
+input{
+    height: 40px;
+    width: 250px;
+    
+}
+
+textarea {
+    height: 150px;
+    width: 300px;
+    
+  }
+    </style>
+
+</head>
+
+<body>  
+    <form>
+        <label> Name (40 Character Max) <br><br>
+            <input type="text" id="NameInput" maxlength="40" oninput="saveInput()"><br><br><br></label>
+        <label> Bio <br><br>
+            <textarea id="Bio" rows="10" columns="80" oninput="saveTextarea()"></textarea><br><br></label>
+        <button type="button" id="clear">clear</button>
+
+        </form>
+        
+</body>
+
+<script>
+
+    var InputName = document.getElementById("NameInput");
+    var text = document.getElementById("Bio");
+    var clear = document.getElementById("clear");
+
+    window.onload = function () {
+
+        InputName.value = localStorage.getItem("Name");
+        text.value = localStorage.getItem("Bio");
+
+    }
+
+    function saveInput() {
+        var Name = InputName.value;
+        localStorage.setItem("Name", Name);
+    }
+
+    function saveTextarea() {
+        var Bio = text.value;
+        localStorage.setItem("Bio", Bio);
+    }
+
+    clear.onclick = function () {
+        localStorage.clear();
+        InputName.value = localStorage.getItem("Name");
+        text.value = localStorage.getItem("Bio");
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+<body>
+    <div id="gameArea">
+        <canvas id="mycanvas" width="800" height="600"></canvas>
+    </div>
+<script>
+     var fruit = [
+    { name: "Apple", quantity: 20, color: "red" },
+    { name: "Orange", quantity: 10, color: "orange" },
+    { name: "Banana", quantity: 15, color: "gold" },
+    { name: "Kiwi", quantity: 3, color: "green" },
+    { name: "Blueberry", quantity: 5, color: "blue" },
+    { name: "Grapes", quantity: 8, color: "purple" }
+];
+
+var height = 30; 
+var Width = 90; 
+var Position = 0; 
+var textPosition = 10; 
+var line = 10; 
+
+
+function BarChart() {
+
+    var canvas = document.getElementById("mycanvas");
+    var context = canvas.getContext("2d");
+    context.translate(0, canvas.height);
+
+    for (i in fruit) {
+
+        context.fillStyle = fruit[i].color; 
+        context.fillRect(Position, 0, Width, -fruit[i].quantity * height); 
+        Position +=90; 
+        
+        context.font = "15px Arial";
+        context.fillStyle = "black";
+        context.fillText(fruit[i].name, textPosition, -line * 2);
+        context.fillText(fruit[i].quantity, textPosition, -line * 4);
+        textPosition += 90;  
+
+    }
+
+}
+
+
+document.addEventListener("DOMContentLoaded", BarChart);
+
+
+</script>
+</body>
+</html>
