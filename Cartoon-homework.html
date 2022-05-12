@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="10000" height="800" style="border:1px solid #d3d3d3;">
+
+<script>
+
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+//Sky
+ctx.fillStyle = "#afeeee";
+ctx.fillRect(0, 0, 1050, 400);
+
+//Ground
+ctx.fillStyle = "#006400";
+ctx.fillRect(0, 400, 1050, 400);
+
+//cloud
+for(i=0; i < 4; i++){
+ctx.fillStyle = "#f6f6f6";
+ctx.beginPath();
+ctx.arc(200 + i * 30 , 120, 60, 0, Math.PI * 2);
+ctx.fill();
+}
+
+//tree trunk
+ctx.fillStyle = "#744700";
+ctx.fillRect(875, 275, 15, 250);
+
+//trees
+ctx.fillStyle = "#006400";
+ctx.beginPath();
+ctx.arc(850, 150, 100, 0, 2 * Math.PI);
+ctx.fill();
+
+ctx.fillStyle = "#006400";
+ctx.beginPath();
+ctx.arc(950, 170, 85, 0, 2 * Math.PI);
+ctx.fill();
+
+ctx.fillStyle = "#006400";
+ctx.beginPath();
+ctx.arc(875, 200, 80, 0, 2 * Math.PI);
+ctx.fill();
+
+//House 
+ctx.fillStyle = "#00478f";
+ctx.fillRect(275, 100, 500, 400);
+
+//Roof
+ctx.fillStyle = "#808080";
+ctx.beginPath();
+ctx.moveTo(250, 100);
+ctx.lineTo(800, 100);
+ctx.lineTo(525, 25);
+ctx.fill();
+
+//Door
+ctx.fillStyle = "#A0522D";
+ctx.fillRect(480, 275, 100, 200);
+
+//House Door Knob
+ctx.fillStyle = "#efe4d4";
+ctx.beginPath();
+ctx.arc(500, 385, 6, 0, 2 * Math.PI);
+ctx.fill();
+
+//Window 1
+ctx.fillStyle = "#f8f8f7";
+ctx.fillRect(300, 150, 130, 100);
+
+ctx.fillStyle = "#808080";
+ctx.fillRect(310, 170, 50, 60);
+ctx.fillRect(370, 170, 50, 60);
+
+//Window 2
+ctx.fillStyle = "#f8f8f7";
+ctx.fillRect(620, 150, 130, 100);
+
+ctx.fillStyle = "#808080";
+ctx.fillRect(630, 170, 50, 60);
+ctx.fillRect(690, 170, 50, 60);
+
+//House stairs
+ctx.fillStyle = "#808080";
+ctx.fillRect(250, 475, 550, 25);
+
+
+//sun
+ctx.fillStyle = "#F9D71C";
+ctx.beginPath();
+ctx.arc(750, 40, 40, 0, 2 * Math.PI);
+ctx.fill();
+
+
+//Moon
+ctx.fillStyle = "#FFF5EE";
+ctx.beginPath();
+ctx.arc(75, 75, 50, 0, 2 * Math.PI);
+ctx.fill();
+
+ctx.fillStyle = "#afeeee";
+ctx.beginPath();
+ctx.arc(100, 75, 50, 0, 2 * Math.PI);
+ctx.fill();
+
+
+//Grass
+for(i = 0; i < 65; i++){
+ctx.fillStyle = "#556B2F";
+ctx.beginPath();
+ctx.moveTo((10 + (i * 15)) , 555);
+ctx.lineTo((25 + (i * 15)), 460);
+ctx.lineTo((30 + (i * 15)), 555);
+ctx.fill();
+}
+
+//fence
+ctx.fillStyle = "#f8f8f7";
+ctx.fillRect(10, 355, 950, 20);
+
+//fence
+for(i = 0; i < 20; i++){
+ctx.fillStyle = "#f8f8f7";
+ctx.fillRect(10 + i * 50, 350 , 20, 250);
+}
+
+
+
+for(i=0; i < 5; i++){
+  for(j=1; j < 20; j++){
+ctx.fillStyle = "#808487";
+ctx.beginPath();
+ctx.arc(420 + j * 10 , 630 + i * 40 , 20, 0, Math.PI * 2);
+ctx.fill();
+  }
+}
+
+//Text on Canvas
+ctx.fillStyle = "white";
+ctx.font = "50px times roman";
+ctx.fillText("I love my house", 10, 800);
+
+</script>
+</body>
+</html>
